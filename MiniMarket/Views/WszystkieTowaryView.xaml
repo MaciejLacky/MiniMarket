@@ -1,0 +1,38 @@
+﻿<local:WszystkieViewBase x:Class="MiniMarket.Views.WszystkieTowaryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MiniMarket.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000">
+   
+        <DataGrid  AutoGenerateColumns="False"  ItemsSource="{Binding  List}" SelectedItem="{Binding Path=WybranyTowar, Mode=TwoWay}" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Kod" Binding="{Binding Path= Twr_Kod}"/>
+                <DataGridTextColumn Header="Numer Kat." Binding="{Binding Path= Twr_NumerKat}" />
+                <DataGridTextColumn Header="Nazwa" Binding="{Binding Path= Twr_Nazwa}" />
+                <DataGridTextColumn Header="Grupa" Binding="{Binding Path= Twr_Grupa}"/>
+                <DataGridTextColumn Header="Kategoria Zakup" Binding="{Binding Path= Twr_KatZakupu}"/>
+                <DataGridTextColumn Header="Kategoria Sprzedaż" Binding="{Binding Path= Twr_KatSprzedazy}"/>
+                <DataGridTextColumn Header="Typ" Binding="{Binding Path= Twr_Typ}"/>
+                <DataGridTextColumn Header="EAN" Binding="{Binding Path= Twr_EAN}"/>
+                <DataGridTextColumn Header="PKWiU" Binding="{Binding Path= Twr_PKWiU}" />
+                <DataGridTextColumn Header="Vat zakup" Binding="{Binding Path= Twr_VatZak}"/>
+                <DataGridTextColumn Header="Vat sprzedaż" Binding="{Binding Path= Twr_VatSpr}"/>
+                <DataGridTextColumn Header="Jedn. podst." Binding="{Binding Path= Twr_JednPodst}"/>
+                <DataGridTextColumn Header="Jedn. pomoc." Binding="{Binding Path= Twr_JednPomoc}"/>
+                <DataGridTextColumn Header="Cena zak. netto" Binding="{Binding Path= Twr_CenaZakNetto}"/>
+                <DataGridTextColumn Header="Cena zak. brutto" Binding="{Binding Path= Twr_CenaZakBrutto}"/>
+                <DataGridTextColumn Header="Cena spr. netto" Binding="{Binding Path= Twr_CenaSprNetto}"/>
+                <DataGridTextColumn Header="Cena spr. brutto" Binding="{Binding Path= Twr_CenaSprBrutto}"/>
+                <DataGridTextColumn Header="Marża" Binding="{Binding Path= Twr_Marza}"/>
+                <DataGridTextColumn Header="Wprowadził" Binding="{Binding Path= Twr_WprUzytId}"/>
+                <DataGridTextColumn Header="Zmienił" Binding="{Binding Path= Twr_ZmienUzytId}"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        
+        
+   
+</local:WszystkieViewBase>

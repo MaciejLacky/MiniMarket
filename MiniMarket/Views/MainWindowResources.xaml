@@ -1,0 +1,397 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vw="clr-namespace:MiniMarket.Views"
+                    xmlns:vm="clr-namespace:MiniMarket.ViewModels">
+
+    <DataTemplate DataType="{x:Type vm:WszystkieTowaryViewModel}">
+        <vw:WszystkieTowaryView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyTowarViewModel}">
+        <vw:NowyTowarView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ZamowieniaViewModel}">
+        <vw:ZamowieniaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ZamowienieViewModel}">
+        <vw:ZamowienieView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:KontrahentViewModel}">
+        <vw:KontrahentView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:CennikViewModel}">
+        <vw:CennikView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:MagazynViewModel}">
+        <vw:MagazynView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:KontrahenciViewModel}">
+        <vw:KontrahenciView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowaFakturaZakupuViewModel}">
+        <vw:NowaFakturaZakupuView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:FakturyZakupuViewModel}">
+        <vw:FakturyZakupuView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:PZViewModel}">
+        <vw:PZView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WZViewModel}">
+        <vw:WZView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:FakturaSprzedazyViewModel}">
+        <vw:FakturaSprzedazyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:FakturySprzedazyViewModel}">
+        <vw:FakturySprzedazyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ParagonyViewModel}">
+        <vw:ParagonyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ParagonViewModel}">
+        <vw:ParagonView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:RezerwacjeViewModel}">
+        <vw:RezerwacjeView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:RezerwacjaViewModel}">
+        <vw:RezerwacjaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:UzytkownicyViewModel}">
+        <vw:UzytkownicyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:FirmyViewModel}">
+        <vw:FirmyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:GrupyTowaroweViewModel}">
+        <vw:GrupyTowaroweView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:KategorieViewModel}">
+        <vw:KategorieView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieWZViewModel}">
+        <vw:WszystkieWZView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkiePZViewModel}">
+        <vw:WszystkiePZView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:KategoriaViewModel}">
+        <vw:KategoriaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:GrupaTowarowaViewModel}">
+        <vw:GrupaTowarowaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:FirmaViewModel}">
+        <vw:FirmaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:UzytkownikViewModel}">
+        <vw:UzytkownikView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:RaportBrakowViewModel}">
+        <vw:RaportBrakowView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:RaportSprzedazViewModel}">
+        <vw:RaportSprzedazView/>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:KategoriaEditViewModel}">
+        <vw:KategoriaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:GrupaTowarowaEditViewModel}">
+        <vw:GrupaTowarowaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:KontrahentEditViewModel}">
+        <vw:KontrahentView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyTowarEditViewModel}">
+        <vw:NowyTowarView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:FakturaSprzedazyEditViewModel}">
+        <vw:FakturaSprzedazyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowaFakturaZakupuEditViewModel}">
+        <vw:NowaFakturaZakupuView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ZamowienieEditViewModel}">
+        <vw:ZamowienieView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:RezerwacjaEditViewModel}">
+        <vw:RezerwacjaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:PZEditViewModel}">
+        <vw:PZView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WZEditViewModel}">
+        <vw:WZView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:FirmaEditViewModel}">
+        <vw:FirmaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:UzytkownikEditViewModel}">
+        <vw:UzytkownikView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:RaportZyskViewModel}">
+        <vw:RaportZyskView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:KartotekaViewModel}">
+        <vw:KartotekaView/>
+    </DataTemplate>
+
+
+
+    <Style x:Key="StylMenu" TargetType="Menu">
+        <Setter Property="Grid.Column" Value="0"/>
+        <Setter Property="Grid.Row" Value="0"/>
+        <Setter Property="Grid.ColumnSpan" Value="2"/>
+        <Setter Property="Menu.Background" Value="#757575"/>
+        <Setter Property="Menu.Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="#757575"/>
+    </Style>
+    <Style x:Key="StylMenuItem" TargetType="MenuItem">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="#757575"/>
+        <Setter Property="BorderBrush" Value="#757575"/>
+        
+    </Style>
+    <Style x:Key="StylToolbar">
+        <Setter Property="ToolBar.Background" Value="#757575"/>
+        <Setter Property="Grid.Column" Value="0"/>
+        <Setter Property="Grid.ColumnSpan" Value="2"/>
+        <Setter Property="Grid.Row" Value="1"/>
+        
+    </Style>
+    <!-- DataGrid -->
+    <Style x:Key="{x:Type DataGrid}"
+           TargetType="{x:Type DataGrid}">
+        <Setter Property="AlternatingRowBackground"
+                Value="White" />
+        <Setter Property="AlternationCount"
+                Value="2" />
+        <Setter Property="Background"
+                Value="White" />
+        <Setter Property="BorderThickness"
+                Value="0" />
+        <Setter Property="Foreground"
+                Value="Black" />
+        <Setter Property="HeadersVisibility"
+                Value="Column" />
+        <Setter Property="RowBackground"
+                Value="#BDBDBD" />
+    </Style>
+    <Style TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="Background" Value="#757575" />
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Padding" Value="4 0 0 0"/>
+        <Setter Property="SeparatorBrush" Value="#152b60"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+   
+    <Style x:Key="StylTogglebar">
+        <Setter Property="ToggleButton.Width" Value="60"/>
+        <Setter Property="ToggleButton.Height" Value="60"/>
+        <Setter Property="ToggleButton.FontSize" Value="8"/>
+        <Setter Property="ToggleButton.VerticalContentAlignment" Value="Bottom"/>
+        <Setter Property="ToggleButton.Foreground" Value="White"/>
+    </Style>
+    <Style x:Key="StylStatusBar">
+        <Setter Property="StatusBar.Background" Value="#757575"/>
+        <Setter Property="StatusBar.Foreground" Value="White"/>
+    </Style>
+    <Style x:Key="StylExpander" TargetType="Expander">
+        <Setter Property="Background" Value="#BDBDBD"/>
+    </Style>
+    
+    <Style TargetType="ToggleButton">
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseCaptured" Value="True">
+                            <Setter Property="Background" Value="#152b60" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Background" Value="#152b60"/>
+                            <Setter Property="Foreground" Value="White" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="#757575" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Height" Value="30"/>
+              
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                        <Grid>
+                            <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#152b60" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="#152b60"/>
+                            <Setter Property="Foreground" Value="White" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    
+
+    <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
+
+        <Setter Property="HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Border 
+            Background="#BDBDBD" 
+            BorderBrush="#BDBDBD" 
+            BorderThickness="0" 
+            CornerRadius="0" 
+            Margin="2" 
+            Padding="2" 
+            SnapsToDevicePixels="True" 
+            >
+                        <TextBlock 
+              FontSize="12"
+             
+              Foreground="White" 
+              HorizontalAlignment="Center"  
+              Text="{TemplateBinding Content}" 
+              />
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <!-- 
+        This template ensures that content of a HeaderedContentControl 
+        fills the available vertical space. 
+        -->
+                <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
+
+                    <DockPanel>
+                        <ContentPresenter 
+              DockPanel.Dock="Bottom"
+              ContentSource="Header" 
+                           Visibility="Hidden"
+              ContentTemplate="{TemplateBinding HeaderTemplate}" 
+              />
+                        <ContentPresenter 
+              ContentSource="Content" 
+              ContentTemplate="{TemplateBinding ContentTemplate}" 
+              />
+                    </DockPanel>
+
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+
+    <!--
+  This style ensures that the borders in the main window are consistent.
+  -->
+    <Style x:Key="MainBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="#BDBDBD" />
+        <Setter Property="BorderBrush" Value="#BDBDBD" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+    </Style>
+
+    <!--
+  This template explains how to render the list of commands on the left
+  side in the main window (the 'Control Panel' area).
+  -->
+    <DataTemplate x:Key="CommandsTemplate">
+        <ItemsControl IsTabStop="False" ItemsSource="{Binding}" Margin="6,2" >
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Margin="2,6">
+            <Button Width="100" HorizontalAlignment="Center"  Command="{Binding Path=Command}" >
+              <TextBlock Text="{Binding Path=DisplayName}" />
+            </Button>
+          </TextBlock>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </DataTemplate>
+
+    <!-- 
+  This template explains how to render 
+  a tab item with a close button.
+  -->
+    <DataTemplate x:Key="ClosableTabItemTemplate" >
+        <DockPanel Width="120" >
+            
+            <Button 
+        Command="{Binding Path=CloseCommand}"
+        Content="X"
+        Foreground="White"
+        Cursor="Hand"
+        DockPanel.Dock="Right"
+        Focusable="False"
+        FontFamily="Courier" 
+        FontSize="9"
+        FontWeight="Bold"  
+        Margin="0,1,0,0"
+        Padding="0"
+        VerticalContentAlignment="Bottom"
+        Width="16" Height="16" 
+        Background="#757575"
+        
+                
+        />
+            <ContentPresenter 
+        Content="{Binding Path=DisplayName}" 
+        VerticalAlignment="Center"
+        
+                
+        />
+            
+        </DockPanel>
+    </DataTemplate>
+
+    <!--
+  This template explains how to render the 'Workspace' content area in the main window.
+  -->
+    <DataTemplate x:Key="WorkspacesTemplate">
+        <TabControl 
+        IsSynchronizedWithCurrentItem="True" 
+        FontWeight="Normal"
+        Background="#EEEEEE"
+        ItemsSource="{Binding}" 
+        ItemTemplate="{StaticResource ClosableTabItemTemplate}"
+        Margin="4"
+      
+      
+      />
+        
+    </DataTemplate>
+    <DataTemplate x:Key="TabItemTemplate">
+        <TabItem Background="#757575" Foreground="White" >
+            
+        </TabItem>
+    </DataTemplate>
+
+</ResourceDictionary>

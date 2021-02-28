@@ -1,0 +1,495 @@
+﻿<Window x:Class="MiniMarket.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:MiniMarket"
+        mc:Ignorable="d"
+        Title="MiniMarket" Height="900" Width="1200">
+    <Window.Resources>
+        <ResourceDictionary Source="MainWindowresources.xaml"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Menu  Style="{StaticResource StylMenu}" >
+            <MenuItem Header="_System" >
+                <MenuItem Header="_Logowanie" InputGestureText="Alt+L" Style="{StaticResource StylMenuItem}" Command="{Binding LogowanieCommand}" >
+                    <MenuItem.Icon >
+                        <Image Source="account.png"></Image>
+                    </MenuItem.Icon>
+
+                </MenuItem>
+                <MenuItem Header="Zmiana _firmy" InputGestureText="Alt+F" Style="{StaticResource StylMenuItem}" Command="{Binding FirmyCommand}" >
+                    <MenuItem.Icon >
+                        <Image Source="visit.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Konfiguracja" InputGestureText="Alt+K " Style="{StaticResource StylMenuItem}">
+                    <MenuItem.Icon >
+                        <Image Source="gear.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Zmiana _użytkownika" InputGestureText="Alt+Z " Style="{StaticResource StylMenuItem}" Command="{Binding UzytkownicyCommand}" >
+                    <MenuItem.Icon >
+                        <Image Source="group.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Koniec _pracy" InputGestureText="Alt+P" Style="{StaticResource StylMenuItem}" Command="{Binding Close}">
+                    <MenuItem.Icon >
+                        <Image Source="offf.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+
+            </MenuItem>
+            <MenuItem Header="_Ogólne">
+                <MenuItem Header="_Kontrahenci" InputGestureText="Alt+K" Style="{StaticResource StylMenuItem}" Command="{Binding KontrahenciCommand}">
+                    <MenuItem.Icon >
+                        <Image Source="tiee.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Towary" InputGestureText="Alt+T" Style="{StaticResource StylMenuItem}" Command="{Binding TowaryCommand}">
+                    <MenuItem.Icon >
+                        <Image Source="boxx.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Rabaty" InputGestureText="Alt+R" Style="{StaticResource StylMenuItem}">
+                    <MenuItem.Icon >
+                        <Image Source="percent.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Cennik" InputGestureText="Alt+C" Style="{StaticResource StylMenuItem}">
+                    <MenuItem.Icon >
+                        <Image Source="price-list.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                
+                <MenuItem Header="_Grupy towarowe" InputGestureText="Alt+G" Style="{StaticResource StylMenuItem}" Command="{Binding GrupyTowaroweCommand}">
+                    <MenuItem.Icon >
+                        <Image Source="grouped-list.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="K_ategorie" InputGestureText="Alt+A" Style="{StaticResource StylMenuItem}" Command="{Binding KategorieCommand}">
+                    <MenuItem.Icon >
+                        <Image Source="list.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Magazyn" InputGestureText="Alt+M" Style="{StaticResource StylMenuItem}" Command="{Binding MagazynCommand}">
+                    <MenuItem.Icon >
+                        <Image Source="warehouse.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+
+            </MenuItem>
+            <MenuItem Header="_Sprzedaż">
+                <MenuItem Header="_Faktury" InputGestureText="Alt+W" Style="{StaticResource StylMenuItem}" Command="{Binding FakturySprzedazyCommand}">
+                    <MenuItem.Icon >
+                        <Image Source="invoicee.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Wydania _zewnętrzne WZ" InputGestureText="Alt+Z" Style="{StaticResource StylMenuItem}" Command="{Binding WszystkieWZCommand}">
+                    <MenuItem.Icon >
+                        <Image Source="icons8-outbox-48.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Paragony" InputGestureText="Alt+P" Style="{StaticResource StylMenuItem}" Command="{Binding ParagonyCommand}" >
+                    <MenuItem.Icon >
+                        <Image Source="paymentt.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Rezerwacje" InputGestureText="Alt+R" Style="{StaticResource StylMenuItem}" Command="{Binding RezerwacjeCommand}">
+                    <MenuItem.Icon >
+                        <Image Source="icons8-add-list-64.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Rozliczenia _kasy" InputGestureText="Alt+K" Style="{StaticResource StylMenuItem}">
+                    <MenuItem.Icon >
+                        <Image Source="icons8-profit-report-64.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Analizy sprzedaży" InputGestureText="Alt+A" Style="{StaticResource StylMenuItem}">
+                    <MenuItem.Icon >
+                        <Image Source="graphh.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Zakupy">
+                <MenuItem Header="_Faktury zakupu" InputGestureText="Alt+F" Style="{StaticResource StylMenuItem}" Command="{Binding FakturyZakupuCommand}">
+                    <MenuItem.Icon >
+                        <Image Source="boxx.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Prz_yjęcia zewnetrzne PZ" InputGestureText="Alt+Y" Style="{StaticResource StylMenuItem}" Command="{Binding WszystkiePZCommand}">
+                    <MenuItem.Icon >
+                        <Image Source="icons8-inbox-48.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Z_amówienia" InputGestureText="Alt+A" Style="{StaticResource StylMenuItem}" Command="{Binding ZamowieniaCommand}">
+                    <MenuItem.Icon >
+                        <Image Source="orderr.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Analizy zakupu" InputGestureText="Alt+A" Style="{StaticResource StylMenuItem}">
+                    <MenuItem.Icon >
+                        <Image Source="graphh.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Narzędzia">
+                <MenuItem Header="_Blokada dostępu" InputGestureText="Alt+B" Style="{StaticResource StylMenuItem}">
+                    <MenuItem.Icon >
+                        <Image Source="icons8-access-64.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Ustawienia daty" InputGestureText="Alt+U" Style="{StaticResource StylMenuItem}" >
+                    <MenuItem.Icon >
+                        <Image Source="icons8-calendar-48.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Raporty _fiskalne" InputGestureText="Alt+F" Style="{StaticResource StylMenuItem}" >
+                    <MenuItem.Icon >
+                        <Image Source="graphh.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="U_rządzenia fiskalne" InputGestureText="Alt+R" Style="{StaticResource StylMenuItem}">
+                    <MenuItem.Icon >
+                        <Image Source="icons8-billing-machine-100.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Kopia bezpieczeństwa" InputGestureText="Alt+K" Style="{StaticResource StylMenuItem}">
+                    <MenuItem.Icon >
+                        <Image Source="backupp.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Import/Export Danych" InputGestureText="Alt+I" Style="{StaticResource StylMenuItem}">
+                    <MenuItem.Icon >
+                        <Image Source="icons8-database-import-64.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Wyślij dane do esklep" InputGestureText="Alt+W" Style="{StaticResource StylMenuItem}">
+                    <MenuItem.Icon >
+                        <Image Source="icons8-online-shopping-64.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Odbierz dane z esklep" InputGestureText="Alt+O" Style="{StaticResource StylMenuItem}">
+                    <MenuItem.Icon >
+                        <Image Source="icons8-online-shopping-64.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+
+            </MenuItem>
+            <MenuItem Header="_Widok">
+                <MenuItem Header="_Gotowe schematy" InputGestureText="Alt+G" Style="{StaticResource StylMenuItem}">
+
+                </MenuItem>
+                <MenuItem Header="_Zmiana czcionki" InputGestureText="Alt+Z" Style="{StaticResource StylMenuItem}" >
+
+                </MenuItem>
+                <MenuItem Header="_Ustawienia okien" InputGestureText="Alt+U" Style="{StaticResource StylMenuItem}">
+
+                </MenuItem>
+                <MenuItem Header="_Import/export ustawień" InputGestureText="Alt+I" Style="{StaticResource StylMenuItem}">
+
+                </MenuItem>
+
+            </MenuItem>
+            <MenuItem Header="_Pomoc" InputGestureText="Alt+P" >
+                <MenuItem Header="_Jak zacząć" InputGestureText="Alt+J" Style="{StaticResource StylMenuItem}">
+
+                </MenuItem>
+                <MenuItem Header="Filmy _instruktażowe" InputGestureText="Alt+I" Style="{StaticResource StylMenuItem}">
+
+                </MenuItem>
+                <MenuItem Header="_Pomoc zdalna" InputGestureText="Alt+P" Style="{StaticResource StylMenuItem}">
+
+                </MenuItem>
+                <MenuItem Header="_FAQ" InputGestureText="Alt+F" Style="{StaticResource StylMenuItem}" >
+
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <ToolBar  Style="{StaticResource StylToolbar}">
+            <ToggleButton  Style="{StaticResource StylTogglebar }" Command="{Binding ParagonyCommand}" >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="paymentt.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleY="0.6" ScaleX="0.8"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </ToggleButton.Background> Paragony
+            </ToggleButton>
+            <ToggleButton  Style="{StaticResource StylTogglebar }" Command="{Binding FakturySprzedazyCommand}" >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="invoicee.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.8" ScaleY="0.6"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </ToggleButton.Background> Faktury sprzedaż
+            </ToggleButton>
+            <ToggleButton Style="{StaticResource StylTogglebar }" Command="{Binding ZamowieniaCommand}" >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="orderr.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.8" ScaleY="0.6"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </ToggleButton.Background> Zamówienia
+            </ToggleButton>
+            <ToggleButton  Style="{StaticResource StylTogglebar }"  Command="{Binding FakturyZakupuCommand}" >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="boxx.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.8" ScaleY="0.6"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </ToggleButton.Background> Faktury zakup
+            </ToggleButton>
+            <ToggleButton  Style="{StaticResource StylTogglebar }" Command="{Binding WszystkieWZCommand}" >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="delivery.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.8" ScaleY="0.6"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </ToggleButton.Background> WZ
+            </ToggleButton>
+            <ToggleButton  Style="{StaticResource StylTogglebar }" Command="{Binding WszystkiePZCommand}" >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="icons8-inbox-48.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.8" ScaleY="0.6"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </ToggleButton.Background> PZ
+            </ToggleButton>
+            <ToggleButton  Style="{StaticResource StylTogglebar }"  Command="{Binding RezerwacjeCommand}" >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="icons8-add-list-64.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.8" ScaleY="0.6"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </ToggleButton.Background> Rezerwacje
+            </ToggleButton>
+            <ToggleButton  Style="{StaticResource StylTogglebar }" Command="{Binding KontrahenciCommand}" >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="tiee.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.8" ScaleY="0.6"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </ToggleButton.Background> Kontrahenci
+            </ToggleButton>
+            <ToggleButton  Style="{StaticResource StylTogglebar }" Command="{Binding MagazynCommand}" >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="warehouse.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.8" ScaleY="0.6"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </ToggleButton.Background> Magazyn
+            </ToggleButton>
+            <ToggleButton  Style="{StaticResource StylTogglebar }" Command="{Binding TowaryCommand}" >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="boxx.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.8" ScaleY="0.6"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </ToggleButton.Background> Towary
+            </ToggleButton>
+            <ToggleButton  Style="{StaticResource StylTogglebar }" Command="{Binding GrupyTowaroweCommand}" >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="grouped-list.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.8" ScaleY="0.6"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </ToggleButton.Background> Grupy towarow
+            </ToggleButton>
+            <ToggleButton  Style="{StaticResource StylTogglebar }" Command="{Binding KategorieCommand}" >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="list.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.8" ScaleY="0.6"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </ToggleButton.Background> Kategorie
+            </ToggleButton>
+            <ToggleButton  Style="{StaticResource StylTogglebar }" Command="{Binding RaportBrakowCommand}"   >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="icons8-profit-report-64.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.8" ScaleY="0.6"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </ToggleButton.Background> Raport zakup
+            </ToggleButton>
+            <ToggleButton  Style="{StaticResource StylTogglebar }" Command="{Binding RaportSprzedazCommand}" >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="graphh.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.8" ScaleY="0.6"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </ToggleButton.Background> Raport sprzedaz
+            </ToggleButton>
+            <ToggleButton  Style="{StaticResource StylTogglebar }" Command="{Binding RaportZyskCommand}" >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="graphh.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.8" ScaleY="0.6"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </ToggleButton.Background> Analiza
+            </ToggleButton>
+            <ToggleButton  Style="{StaticResource StylTogglebar }"  Command="{Binding Close}" >
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="offf.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.8" ScaleY="0.6"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </ToggleButton.Background> Koniec pracy
+            </ToggleButton>
+        </ToolBar>
+        <Expander  Grid.Row="2" Grid.Column="0" Style="{StaticResource StylExpander}">
+                        
+               <HeaderedContentControl Header="Operacje"
+
+                Content="{Binding Path=Commands}" 
+                ContentTemplate="{StaticResource CommandsTemplate}"
+                Style="{StaticResource MainHCCStyle}"     
+                />
+                        
+        </Expander>
+        <Border Grid.Row="2" Grid.Column="1" Background="#BDBDBD">
+            <HeaderedContentControl Header="Przestrzeń robocza"  
+                Content="{Binding Path=Workspaces}"
+                ContentTemplate="{StaticResource WorkspacesTemplate}"
+                Style="{StaticResource MainHCCStyle}"
+            />
+        </Border>
+        <StatusBar Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource StylStatusBar }">
+            <StatusBarItem>
+                <TextBlock Margin="2,0">Użytkownik</TextBlock>
+            </StatusBarItem>
+            <StatusBarItem>
+                <Label Width="Auto" Height="23" Background="White" >
+                    <TextBlock Margin="0,0,0,1" VerticalAlignment="Center" >Maciej Łącki</TextBlock>
+                </Label>
+            </StatusBarItem>
+           
+            <StatusBarItem>
+                <TextBlock Margin="2,0">Wersja</TextBlock>
+            </StatusBarItem>
+            <StatusBarItem>
+                <Label Width="Auto" Height="23" Background="White" >
+                    <TextBlock Margin="0" VerticalAlignment="Center">Ver. 1.0</TextBlock>
+                </Label>
+            </StatusBarItem>
+
+            <StatusBarItem HorizontalAlignment="Right" Margin="0,0,2,0">
+                <Label Width="100" Height="25"  >
+                    <Label.Background>
+                        <ImageBrush ImageSource="logoMiniMarket.png"/>
+                    </Label.Background>
+
+                </Label>
+            </StatusBarItem>
+
+
+
+        </StatusBar>
+
+    </Grid>
+</Window>

@@ -1,0 +1,130 @@
+﻿<UserControl x:Class="MiniMarket.Views.RaportSprzedazView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MiniMarket.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary Source="StylZakladek.xaml"/>
+    </UserControl.Resources>
+    <Grid Style="{StaticResource GridStandard}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0"  Height="40"  Margin="0,2,0,2" Background="#BDBDBD" >
+            <Button Command="{Binding  LoadCommand}" Content="Wylicz"  Width="80"  Height="30" Margin="2" />
+        </WrapPanel>
+        <DataGrid Grid.Row="2" AutoGenerateColumns="False"  ItemsSource="{Binding List}"  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Kod" Binding="{Binding Path= Twr_Kod}"/>
+                <DataGridTextColumn Header="Numer Kat." Binding="{Binding Path= Twr_NumerKat}" />
+                <DataGridTextColumn Header="Nazwa" Binding="{Binding Path= Twr_Nazwa}" />
+                <DataGridTextColumn Header="Grupa" Binding="{Binding Path= Twr_Grupa}"/>
+                <DataGridTextColumn Header="Kategoria Zakup" Binding="{Binding Path= Twr_KatZakupu}"/>
+                <DataGridTextColumn Header="Kategoria Sprzedaż" Binding="{Binding Path= Twr_KatSprzedazy}"/>
+                <DataGridTextColumn Header="Typ dokumentu" Binding="{Binding Path= TypDokumentu}" />
+                <DataGridTextColumn Header="Przychód" Binding="{Binding Path= Twr_ZakupIlosc}"/>
+                <DataGridTextColumn Header="Rozchód" Binding="{Binding Path= Twr_SprzedazIlosc}"/>
+                <DataGridTextColumn Header="Cena netto " Binding="{Binding Path= Twr_CenaZakNetto}" />
+                <DataGridTextColumn Header="Vat zakup" Binding="{Binding Path= Twr_VatZak}"/>
+                <DataGridTextColumn Header="Vat sprzedaz" Binding="{Binding Path= Twr_VatSpr}"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Expander Grid.Row="1" Header="Sortowanie i Filtrowanie" Style="{StaticResource ExpanderOtwarty}">
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                    <ColumnDefinition Style="{StaticResource ColumnDefinitionStandardowy}"/>
+                    <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                    <ColumnDefinition Style="{StaticResource ColumnDefinitionStandardowy}"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="170"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource Border}">
+                    <Grid Grid.Column="0" Grid.Row="0"  >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                            <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0"  Content="Cena sprzedazy netto od:" Style="{StaticResource LabelStandardowy}" />
+                        <TextBox Text="{Binding CenaOd, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBoxStandardowy}" Width="65" />
+                        <Label Grid.Row="1" Grid.Column="0" Content="Cena sprzedazy netto do:" Style="{StaticResource LabelStandardowy}"/>
+                        <TextBox Text="{Binding CenaDo, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxStandardowy}" Width="65" />
+
+                    </Grid>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource Border}">
+                    <Grid>
+                        <Label Content="Kategoria" Style="{StaticResource LabelStandardowy}"/>
+                        <ComboBox 
+                            ItemsSource="{Binding KategorieComboBoxItems}"
+                                              DisplayMemberPath="Value"
+                                              SelectedValuePath="Key"
+                                              SelectedValue="{Binding Path=IdKategori,Mode=TwoWay}"
+                            Width="120" Margin="76,2,2,2" Style="{StaticResource ComboBoxStandardowy}"/>
+                    </Grid>
+                </Border>
+                <Border Grid.Column="2" Grid.Row="0" Style="{StaticResource Border}">
+                    <Grid Grid.Column="0" Grid.Row="0"  >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                            <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0"  Content="Ilość towarów w zakresie:" Style="{StaticResource LabelStandardowy}" />
+                        <Label Content="{Binding Ilosc}" Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelStandardowy}" Width="45" Background="LightGray" />
+                        <Label Grid.Row="1" Grid.Column="0" Content="Wartość netto towarów:" Style="{StaticResource LabelStandardowy}"/>
+                        <Label Content="{Binding Suma}" Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelStandardowy}" Width="45" Background="LightGray" />
+
+                    </Grid>
+                </Border>
+                <Border Grid.Column="2" Grid.Row="1" Style="{StaticResource Border}">
+                    <Grid>
+                        <Label Content="Średnia cena sprzedaży" Style="{StaticResource LabelStandardowy}"/>
+                        <Label Content="{Binding Srednia}" Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelStandardowy}" Width="45" HorizontalAlignment="Right" Background="LightGray" />
+                    </Grid>
+                </Border>
+                <Border Grid.Column="4" Grid.Row="0" Style="{StaticResource Border}">
+
+                </Border>
+                <Border Grid.Column="4" Grid.Row="1" Style="{StaticResource Border}">
+
+                </Border>
+                <Border Grid.Column="6" Grid.Row="0" Style="{StaticResource Border}">
+
+                </Border>
+                <Border Grid.Column="8" Grid.Row="0" Style="{StaticResource Border}">
+
+                </Border>
+                <Border Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="3" Style="{StaticResource Border}">
+
+                </Border>
+                <Border Grid.Row="0" Grid.Column="10"  Style="{StaticResource Border}">
+
+                </Border>
+            </Grid>
+        </Expander>
+
+    </Grid>
+</UserControl>

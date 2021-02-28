@@ -1,0 +1,23 @@
+﻿<local:WszystkieViewBase x:Class="MiniMarket.Views.RezerwacjeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MiniMarket.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1000">
+    <DataGrid AutoGenerateColumns="False"  ItemsSource="{Binding  List}" SelectedItem="{Binding Path=WybranaRezerwacja, Mode=TwoWay}">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Numer dokumentu" Binding="{Binding Path=  Rez_NrDok}" />
+            <DataGridTextColumn Header="Rodzaj dokumentu" Binding="{Binding Path=  Rez_RodzajDokumentu}" />
+            <DataGridTextColumn Header="Kontrahent" Binding="{Binding Path=  Rez_NazwaKontrahent}"/>
+            <DataGridTextColumn Header="Kategoria" Binding="{Binding Path=  Rez_Kategoria}"/>
+            <DataGridTextColumn Header="Magazyn" Binding="{Binding Path=  Rez_Magazyn}"/>
+            <DataGridTextColumn Header="Data wystawienia" Binding="{Binding Path=  Rez_DataWyst}"/>
+            <DataGridTextColumn Header="Data sprzedaży" Binding="{Binding Path=  Rez_DataSprzedazy}"/>
+            <DataGridTextColumn Header="Rabat" Binding="{Binding Path=  Rez_Rabat}"/>
+            <DataGridTextColumn Header="Dokument" Binding="{Binding Path= Rez_DokNettoBrutto}"/>
+            <DataGridTextColumn Header="Kwota" />
+        </DataGrid.Columns>
+    </DataGrid>
+</local:WszystkieViewBase>

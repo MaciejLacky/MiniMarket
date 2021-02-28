@@ -1,0 +1,338 @@
+﻿<UserControl x:Class="MiniMarket.Views.KontrahentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MiniMarket.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1000">
+    <UserControl.Resources>
+        <ResourceDictionary Source="StylZakladek.xaml"/>
+    </UserControl.Resources>
+    <Grid Style="{StaticResource GridStandard}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="1"  Height="40"  Margin="0,2,0,2" Background="#BDBDBD" >
+            <Button Command="{Binding SaveCommand}" Content="Zapisz"  Width="80"  Height="30" Margin="2" />
+            <Button Command="{Binding CloseCommand}"  Content="Anuluj"  Width="80"  Height="30"  Margin="2" />
+            <Button  Content="Odswiez"  Width="80"  Height="30" Command="{Binding  LoadCommand}" Margin="2" />
+        </WrapPanel>
+        <TabControl Grid.Row="0" Style="{StaticResource TabControl}">
+            <TabItem Header="_1 Ogólne" Style="{StaticResource TabItem}">
+                <Grid Style="{StaticResource GridStandard}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Expander Grid.Row="0" Grid.Column="0" Header="Dane ogólne" Style="{StaticResource ExpanderOtwarty}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionDlugi}"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                            </Grid.RowDefinitions>
+                            <Label  Grid.Row="0" Grid.Column="0" Content="Kod:" FontWeight="Bold" Style="{StaticResource LabelStandardowy}"/>
+                            <Label Grid.Row="3" Grid.Column="0" Content="Nazwa:" FontWeight="Bold" Style="{StaticResource LabelStandardowy}"/>
+                            <TextBox Text="{Binding Kod, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="2" Style="{StaticResource TextBoxStandardowy}"/>
+                            <TextBox Text="{Binding Nazwa, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="5" Style="{StaticResource TextBoxStandardowy}"/>
+                            <Label Grid.Row="0" Grid.Column="4" Content="NIP:" Style="{StaticResource LabelStandardowy}"/>
+                            <Label Grid.Row="1" Grid.Column="4" Content="REGON:" Style="{StaticResource LabelStandardowy}"/>
+                            <Label Grid.Row="2" Grid.Column="4" Content="PESEL:" Style="{StaticResource LabelStandardowy}"/>
+                            <TextBox Text="{Binding Nip, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="0" Grid.Column="6" Style="{StaticResource TextBoxStandardowy}"/>
+                            <TextBox Text="{Binding Regon, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="1" Grid.Column="6" Style="{StaticResource TextBoxStandardowy}"/>
+                            <TextBox Text="{Binding Pesel, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="2" Grid.Column="6" Style="{StaticResource TextBoxStandardowy}"/>
+                        </Grid>
+                    </Expander>
+                    <Expander Grid.Row="1" Header="Dane teleadresowe" Style="{StaticResource ExpanderOtwarty}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionDlugi}"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionComboBox}"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Content="Kraj:" Style="{StaticResource LabelStandardowy}"/>
+                            <Label Grid.Row="1" Grid.Column="0" Content="_Miasto" Style="{StaticResource LabelStandardowy}" Width="80"/>
+                            <Label Grid.Row="2" Grid.Column="0" Content="_Poczta" Style="{StaticResource LabelStandardowy}" Width="80"/>
+                            <Label Grid.Row="3" Grid.Column="0" Content="Ulica:" Style="{StaticResource LabelStandardowy}"/>
+
+                            <Label Grid.Row="5" Grid.Column="0" Content="Telefony:" Style="{StaticResource LabelStandardowy}"/>
+                            <Label Grid.Row="7" Grid.Column="0" Content="Telefon SmS:" Style="{StaticResource LabelStandardowy}"/>
+                            <TextBox Text="{Binding Kraj, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="0" Grid.Column="2" Style="{StaticResource TextBoxStandardowy}"/>
+                            <TextBox Text="{Binding Miasto, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="1" Grid.Column="2" Style="{StaticResource TextBoxStandardowy}"/>
+                            <TextBox Text="{Binding Poczta, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="2" Grid.Column="2" Style="{StaticResource TextBoxStandardowy}"/>
+                            <TextBox Text="{Binding Ulica, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="3" Grid.Column="2" Style="{StaticResource TextBoxStandardowy}"/>
+
+                            <TextBox Text="{Binding Telefon, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="5" Grid.Column="2" Style="{StaticResource TextBoxStandardowy}" Width="250" HorizontalAlignment="Left"/>
+                            <TextBox Text="{Binding Telefon1, UpdateSourceTrigger=PropertyChanged}" Grid.Row="6" Grid.Column="2" Style="{StaticResource TextBoxStandardowy}" Width="250" HorizontalAlignment="Left"/>
+                            <TextBox Text="{Binding TelefonSms, UpdateSourceTrigger=PropertyChanged}" Grid.Row="7" Grid.Column="2" Style="{StaticResource TextBoxStandardowy}" Width="250" HorizontalAlignment="Left"/>
+                            <Label Grid.Row="0" Grid.Column="4" Content="Kraj ISO:" Style="{StaticResource LabelStandardowy}"/>
+                            <Label Grid.Row="1" Grid.Column="4" Content="Województwo:" Style="{StaticResource LabelStandardowy}"/>
+                            <Label Grid.Row="2" Grid.Column="4" Content="Kod Pocztowy:" Style="{StaticResource LabelStandardowy}"/>
+                            <Label Grid.Row="3" Grid.Column="4" Content="Numer domu:" Style="{StaticResource LabelStandardowy}"/>
+                            <Label Grid.Row="5" Grid.Column="4" Content="Fax:" Style="{StaticResource LabelStandardowy}"/>
+                            <Label Grid.Row="6" Grid.Column="4" Content="E-mail:" Style="{StaticResource LabelStandardowy}"/>
+                            <Label Grid.Row="7" Grid.Column="4" Content="Url:" Style="{StaticResource LabelStandardowy}"/>
+                            <TextBox Text="{Binding KrajIso, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="6" Style="{StaticResource TextBoxStandardowy}" />
+                            <TextBox Text="{Binding Wojewodztwo, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="3" Style="{StaticResource TextBoxStandardowy}" />
+                            <TextBox Text="{Binding KodPocztowy, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="6" Style="{StaticResource TextBoxStandardowy}" />
+                            <TextBox Text="{Binding NrDomu, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="6" Style="{StaticResource TextBoxStandardowy}" />
+                            <TextBox Text="{Binding Fax, UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="6" Grid.ColumnSpan="3" Style="{StaticResource TextBoxStandardowy}" />
+                            <TextBox Text="{Binding Email, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="3" Style="{StaticResource TextBoxStandardowy}" />
+                            <TextBox Text="{Binding Url, UpdateSourceTrigger=PropertyChanged}" Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="3" Style="{StaticResource TextBoxStandardowy}" />
+                        </Grid>
+                    </Expander>
+                    
+                    <Expander Grid.Row="3" Header="Inne" Style="{StaticResource ExpanderOtwarty}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionDlugi}"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionDlugi}"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Command="{Binding ShowKategorie}" Content="Kategoria _sprzedaży" Style="{StaticResource ButtonStandardowy}" Grid.Row="0" Grid.Column="0"/>
+                            <Button Command="{Binding ShowKategorie}" Content="Kategoria _zakupu" Style="{StaticResource ButtonStandardowy}" Grid.Row="1" Grid.Column="0"/>
+                            <ComboBox
+                            ItemsSource="{Binding KategorieComboBoxItem}"
+                                              DisplayMemberPath="K_Nazwa"
+                                              SelectedValuePath="K_IGKId"
+                                              SelectedValue="{Binding Path=IdKategorii,Mode=TwoWay}"
+                            Grid.Row="0" 
+                            Grid.Column="2" 
+                            Style="{StaticResource ComboBoxStandardowy}"/>
+                            <ComboBox 
+                            ItemsSource="{Binding KategorieComboBoxItem}"
+                                              DisplayMemberPath="K_Nazwa"
+                                              SelectedValuePath="K_IGKId"
+                                              SelectedValue="{Binding Path=IdKategorii,Mode=TwoWay}"
+                            Grid.Row="1" 
+                            Grid.Column="2" 
+                            Style="{StaticResource ComboBoxStandardowy}"/>
+
+                        </Grid>
+                    </Expander>
+                </Grid>
+            </TabItem>
+            <TabItem Header="_2 Płatności" Style="{StaticResource TabItem}">
+                <Grid Style="{StaticResource GridStandard}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Expander Grid.Row="0" Header="Płatności" Style="{StaticResource ExpanderOtwarty}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionStandardowy}"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionComboBox}"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionComboBox}"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                                <ColumnDefinition Style="{StaticResource ColumnDefinitionComboBox}"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Content="Forma płatności :" Style="{StaticResource LabelStandardowy}"/>
+                            <Label Grid.Row="1" Grid.Column="0" Content="Domyślna waluta :" Style="{StaticResource LabelStandardowy}"/>
+                            <CheckBox Grid.Row="0" Grid.Column="4" Content="Termin płatności" Style="{StaticResource CheckBoxOgolny }" HorizontalAlignment="Left" />
+                            <Label Grid.Row="1" Grid.Column="4" Content="Forma płatności :" Style="{StaticResource LabelStandardowy}"/>
+                            <ComboBox Grid.Row="0" Grid.Column="2" Style="{StaticResource ComboBoxStandardowy}" />
+                            <ComboBox Grid.Row="1" Grid.Column="2" Style="{StaticResource ComboBoxStandardowy}" />
+                            <ScrollViewer Grid.Row="0" Grid.Column="6" Style="{StaticResource ScrollViewerOgolny}"/>
+                            <ScrollViewer Grid.Row="1" Grid.Column="6" Style="{StaticResource ScrollViewerOgolny}"/>
+                            <StackPanel Grid.Row="2" Grid.ColumnSpan="6">
+                                <CheckBox Content="Nie rozliczaj płatności"/>
+                                <CheckBox Content="Mpp - podzielona płatność"/>
+                                <CheckBox Content="Nie naliczaj odstetek dla płatności"/>
+                            </StackPanel>
+
+                        </Grid>
+                    </Expander>
+                    <Expander Grid.Row="1" Header="Numery kont bankowych" Style="{StaticResource ExpanderOtwarty}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <DataGrid>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Opis"/>
+                                    <DataGridTextColumn Header="Bank"/>
+                                    <DataGridTextColumn Header="Numer rachunku"/>
+                                    <DataGridTextColumn Header="Domyslny"/>
+                                    <DataGridTextColumn Header="Data ostatniego sprawdzenia"/>
+                                    <DataGridTextColumn Header="W wykazie"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </Expander>
+                </Grid>
+            </TabItem>
+            <TabItem Header="_3 Handlowe" Style="{StaticResource TabItem}">
+                <Grid Style="{StaticResource GridStandard}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="400"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}" />
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Expander Grid.Column="0" Grid.Row="0" Style="{StaticResource ExpanderOtwarty}" Header="Warunki handlowe">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                                    <ColumnDefinition Style="{StaticResource ColumnDefinitionDlugi}"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                </Grid.RowDefinitions>
+                                <CheckBox Grid.Row="0" Grid.Column="0" Content="Limit kredytu" Style="{StaticResource CheckBoxOgolny}" HorizontalAlignment="Left"/>
+                                <Label Content="Limit wykorzystany" Grid.Row="1" Grid.Column="0"/>
+                                <CheckBox Content="Limit przeter. płatn." Style="{StaticResource CheckBoxOgolny}" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="0"/>
+                                <Label Content="Cena domyślna:" Grid.Row="3" Grid.Column="0"/>
+                                <Label Content="Dokument liczony od:" Grid.Row="4" Grid.Column="0"/>
+                                <Label Content="Rabat standartowy:" Grid.Row="5" Grid.Column="0"/>
+                                <ScrollViewer Grid.Row="0" Grid.Column="2" Style="{StaticResource ScrollViewerOgolny}"/>
+                                <ScrollViewer Grid.Row="1" Grid.Column="2" Style="{StaticResource ScrollViewerOgolny}"/>
+                                <ScrollViewer Grid.Row="2" Grid.Column="2" Style="{StaticResource ScrollViewerOgolny}"/>
+                                <ComboBox Grid.Row="3" Grid.Column="2" Style="{StaticResource ComboBoxStandardowy }"/>
+                                <WrapPanel Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <CheckBox Content="Netto"  />
+                                    <CheckBox Content="Brutto" />
+                                </WrapPanel>
+                                <ScrollViewer Grid.Row="5" Grid.Column="2" Style="{StaticResource ScrollViewerOgolny}"/>
+                            </Grid>
+                        </Expander>
+                        <Expander Grid.Column="0" Grid.Row="1" Style="{StaticResource ExpanderOtwarty}" Header="e-faktury">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                                    <ColumnDefinition Style="{StaticResource ColumnDefinitionDlugi}"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+
+                                </Grid.RowDefinitions>
+                                <CheckBox Content="Zgoda na wysyłanie faktur: " Style="{StaticResource CheckBoxOgolny}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left"/>
+                                <Label Content="Typ wymiany: " Grid.Row="1" Grid.Column="0"/>
+                                <Label Content="Id partnera: " Grid.Row="2" Grid.Column="0"/>
+                                <Label Content="Oddział partnera: " Grid.Row="3" Grid.Column="0"/>
+                                <ScrollViewer Grid.Row="2" Grid.Column="2" Style="{StaticResource ScrollViewerOgolny}"/>
+                                <TextBox Grid.Row="3" Grid.Column="2" />
+                                <DockPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                    <RadioButton Content="XML"/>
+                                    <RadioButton Content="CSV"/>
+                                </DockPanel>
+                            </Grid>
+
+                        </Expander>
+                        <Expander Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource ExpanderOtwarty}" Header="Statusy">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="250"/>
+                                    <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                    <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                                </Grid.RowDefinitions>
+                                <WrapPanel Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="left" VerticalAlignment="Center" >
+                                    <RadioButton Content="Podmiot gospodarczy" Width="255"/>
+                                    <RadioButton Content="Osoba fizyczna"/>
+                                </WrapPanel>
+                                <Label Content="Status: " Grid.Row="1" Grid.Column="0"/>
+                                <WrapPanel Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Center">
+                                    <Label Content="Metoda kasowa: "/>
+                                    <CheckBox Content="Sprzedaż " VerticalAlignment="Center"/>
+                                    <CheckBox Content="Zakup" VerticalAlignment="Center"/>
+                                </WrapPanel>
+                                <CheckBox Content="Podatnik Vat czynny" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+                                <CheckBox Content="Vat wg daty" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+                                <CheckBox Content="Rolnik" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
+                                <CheckBox Content="Kontrahent powiązany art.nr32" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"/>
+                                <CheckBox Content="Nie publikuj danych kontrahenta" Grid.Row="7" Grid.Column="0" VerticalAlignment="Center"/>
+                                <CheckBox Content="Blokada wystawienia danych" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center"/>
+                                <ComboBox Grid.Row="1" Grid.Column="3" Width="100" HorizontalAlignment="Left"/>
+                            </Grid>
+
+                        </Expander>
+                    </Grid>
+                    <Expander Grid.Row="1" Header="Opis" Style="{StaticResource ExpanderOtwarty}">
+                        <TextBox Height="Auto"/>
+                    </Expander>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

@@ -1,0 +1,23 @@
+﻿<local:WszystkieViewBase x:Class="MiniMarket.Views.FakturySprzedazyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MiniMarket.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1000">
+    <DataGrid Grid.Row="1" AutoGenerateColumns="False"  ItemsSource="{Binding  List}" SelectedItem="{Binding Path=WybranaFaktura, Mode=TwoWay}" >
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Numer dokumentu" Binding="{Binding Path= Fvs_NrDok}"/>
+            <DataGridTextColumn Header="Rodzaj" Binding="{Binding Path= Fvs_RodzajDokumentu}"/>
+            <DataGridTextColumn Header="Kontrahent" Binding="{Binding Path= Fvs_Kontrahent}" />
+            <DataGridTextColumn Header="Data wyst." Binding="{Binding Path=  Fvs_DataWyst}"/>
+            <DataGridTextColumn Header="Data sprzedaży" Binding="{Binding Path= FvsDataSprzedazy}"/>
+            <DataGridTextColumn Header="Magazyn" Binding="{Binding Path= Fvs_Magazyn}"/>
+            <DataGridTextColumn Header="Kategoria" Binding="{Binding Path= Fvs_Kategoria}"/>
+            <DataGridTextColumn Header="Termin" Binding="{Binding Path=  Fvs_Termin}"/>
+            <DataGridTextColumn Header="Typ Płatności" Binding="{Binding Path= Fvs_PlatnoscTyp}"/>
+            <DataGridTextColumn Header="Dokument" Binding="{Binding Path= Fvs_DokNettoBrutto}"/>
+        </DataGrid.Columns>
+    </DataGrid>
+</local:WszystkieViewBase>

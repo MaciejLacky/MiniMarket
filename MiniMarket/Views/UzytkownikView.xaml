@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="MiniMarket.Views.UzytkownikView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MiniMarket.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+     >
+    <UserControl.Resources>
+        <ResourceDictionary Source="StylZakladek.xaml"  />
+    </UserControl.Resources>
+    <Grid Background="#BDBDBD">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Label Content="Nazwa użytkownika :" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="Telefon : " Grid.Row="3" Grid.Column="1"/>
+        <Label Content="Stanowisko :" Grid.Row="5" Grid.Column="1"/>
+        <Label Content="Uprawnienia: " Grid.Row="7" Grid.Column="1"/>
+        <TextBox Text="{Binding Nazwa, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="3"/>
+        <TextBox Text="{Binding Telefon, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="3"/>
+        <TextBox Text="{Binding Stanowisko, UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="3"/>
+        <WrapPanel  Grid.Row="7" Grid.Column="3" Margin="5,5,5,1">
+            <RadioButton IsChecked="{Binding Admin, UpdateSourceTrigger=PropertyChanged}" Content="Admin" Margin="0,0,20,0" />
+            <RadioButton IsChecked="{Binding Manager, UpdateSourceTrigger=PropertyChanged}" Content="Manager" Margin="0,0,20,0"/>
+            <RadioButton IsChecked="{Binding Pracownik, UpdateSourceTrigger=PropertyChanged}" Content="Pracownik" Margin="0,0,20,0"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="9" Grid.ColumnSpan="4"  Margin="0,2,0,2"  >
+            <Button Command="{Binding SaveCommand}" Content="Zapisz"  Width="80"  Height="30" Margin="2" />
+            <Button Command="{Binding CloseCommand}" Content="Anuluj"  Width="80"  Height="30"  Margin="2" />
+        </WrapPanel>
+    </Grid>
+</UserControl>

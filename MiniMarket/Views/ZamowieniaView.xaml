@@ -1,0 +1,23 @@
+﻿<local:WszystkieViewBase x:Class="MiniMarket.Views.ZamowieniaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MiniMarket.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DataGrid AutoGenerateColumns="False"  ItemsSource="{Binding  List}" SelectedItem="{Binding Path=WybraneZamowienie, Mode=TwoWay}" >
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Numer dokumentu" Binding="{Binding Path=  Zam_NrDok}" />
+            <DataGridTextColumn Header="Kontrahent" Binding="{Binding Path=  Zam_Kontrahent}"/>
+            <DataGridTextColumn Header="Kategoria" Binding="{Binding Path=  Zam_Kategoria}"/>
+            <DataGridTextColumn Header="Magazyn" Binding="{Binding Path=  Zam_Magazyn}"/>
+ 
+            <DataGridTextColumn Header="Data wystawienia" Binding="{Binding Path=  Zam_DataWyst}"/>
+            <DataGridTextColumn Header="Data sprzedaży" Binding="{Binding Path=  Zam_DataSprzedazy}"/>
+            <DataGridTextColumn Header="Rabat" Binding="{Binding Path=  Zam_Rabat}"/>
+            <DataGridTextColumn Header="Termin" Binding="{Binding Path=  Zam_Termin}"/>
+            <DataGridTextColumn Header="Netto" Binding="{Binding Path=  Zam_NrDok}"/>
+        </DataGrid.Columns>
+    </DataGrid>
+</local:WszystkieViewBase>

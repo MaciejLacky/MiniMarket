@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D02A081-0EA9-434C-B0D6-BEE9DAEA0C92}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MiniMarket</RootNamespace>
+    <AssemblyName>MiniMarket</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Model\BusinessLogic\DataBaseClass.cs" />
+    <Compile Include="Model\BusinessLogic\KategoriaBusinessLogic.cs" />
+    <Compile Include="Model\BusinessLogic\ZakresCenBusinessLogic.cs" />
+    <Compile Include="Model\EntitiesForView\ComboBoxKeyAndValue.cs" />
+    <Compile Include="Model\EntitiesForView\FakturaSprzedazyForView.cs" />
+    <Compile Include="Model\EntitiesForView\FakturaZakupuForView.cs" />
+    <Compile Include="Model\EntitiesForView\FvZakupuPozycjeForView.cs" />
+    <Compile Include="Model\EntitiesForView\MagazynForView.cs" />
+    <Compile Include="Model\EntitiesForView\ParagonForView.cs" />
+    <Compile Include="Model\EntitiesForView\PZForView.cs" />
+    <Compile Include="Model\EntitiesForView\RezerwacjeForView.cs" />
+    <Compile Include="Model\EntitiesForView\TowarForView.cs" />
+    <Compile Include="Model\EntitiesForView\TowarSelected.cs" />
+    <Compile Include="Model\EntitiesForView\WZForView.cs" />
+    <Compile Include="Model\EntitiesForView\ZamowieniaForView.cs" />
+    <Compile Include="Model\Entities\CenaDomyslna.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\DokumentNettoBrutto.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\FakturySprzedazy.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\FakturySprzedazyPozycje.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\FakturyZakupu.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\FakturyZakupuPozycje.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Firmy.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\GrupyTowarowe.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\JednostkaPodstawowa.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\JednostkaPomocnicza.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Kategorie.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Kontrahenci.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Magazyny.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\ModelMiniMarket.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMiniMarket.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\ModelMiniMarket.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\ModelMiniMarket.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMiniMarket.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Paragony.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\ParagonyPozycje.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\PZ.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\PzPozycje.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Rezerwacje.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\RezerwacjePozycje.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\RodzajeDokumentow.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\RodzajePlatnosci.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\sysdiagrams.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Towary.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\TowaryIlosci.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\TypTowaru.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Uzytkownicy.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\VatSprzedaz.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\VatZakup.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\WZ.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\WzPozycje.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Zamowienia.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\ZamowieniaPozycje.cs">
+      <DependentUpon>ModelMiniMarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Validators\LogicValidator.cs" />
+    <Compile Include="Model\Validators\StringValidator.cs" />
+    <Compile Include="Model\Validators\Validator.cs" />
+    <Compile Include="ViewModels\CennikViewModel.cs" />
+    <Compile Include="ViewModels\DataBaseViewModel.cs" />
+    <Compile Include="ViewModels\FakturaSprzedazyEditViewModel.cs" />
+    <Compile Include="ViewModels\FakturaSprzedazyViewModel.cs" />
+    <Compile Include="ViewModels\FakturySprzedazyViewModel.cs" />
+    <Compile Include="ViewModels\FakturyZakupuViewModel.cs" />
+    <Compile Include="ViewModels\FirmaEditViewModel.cs" />
+    <Compile Include="ViewModels\FirmaViewModel.cs" />
+    <Compile Include="ViewModels\FirmyViewModel.cs" />
+    <Compile Include="ViewModels\GrupaTowarowaEditViewModel.cs" />
+    <Compile Include="ViewModels\GrupaTowarowaViewModel.cs" />
+    <Compile Include="ViewModels\GrupyTowaroweViewModel.cs" />
+    <Compile Include="ViewModels\JedenViewModel.cs" />
+    <Compile Include="ViewModels\KartotekaViewModel.cs" />
+    <Compile Include="ViewModels\KategoriaEditViewModel.cs" />
+    <Compile Include="ViewModels\KategoriaViewModel.cs" />
+    <Compile Include="ViewModels\KategorieViewModel.cs" />
+    <Compile Include="ViewModels\KontrahenciViewModel.cs" />
+    <Compile Include="ViewModels\KontrahentEditViewModel.cs" />
+    <Compile Include="ViewModels\KontrahentViewModel.cs" />
+    <Compile Include="ViewModels\MagazynViewModel.cs" />
+    <Compile Include="ViewModels\NowaFakturaZakupuEditViewModel.cs" />
+    <Compile Include="ViewModels\NowaFakturaZakupuViewModel.cs" />
+    <Compile Include="ViewModels\NowyTowarEditViewModel.cs" />
+    <Compile Include="ViewModels\ParagonViewModel.cs" />
+    <Compile Include="ViewModels\ParagonyViewModel.cs" />
+    <Compile Include="ViewModels\PZEditViewModel.cs" />
+    <Compile Include="ViewModels\PZViewModel.cs" />
+    <Compile Include="ViewModels\RaportBrakowViewModel.cs" />
+    <Compile Include="ViewModels\RaportSprzedazViewModel.cs" />
+    <Compile Include="ViewModels\RaportZyskViewModel.cs" />
+    <Compile Include="ViewModels\RezerwacjaEditViewModel.cs" />
+    <Compile Include="ViewModels\RezerwacjaViewModel.cs" />
+    <Compile Include="ViewModels\RezerwacjeViewModel.cs" />
+    <Compile Include="ViewModels\UzytkownicyViewModel.cs" />
+    <Compile Include="ViewModels\UzytkownikEditViewModel.cs" />
+    <Compile Include="ViewModels\UzytkownikViewModel.cs" />
+    <Compile Include="ViewModels\WszystkiePZViewModel.cs" />
+    <Compile Include="ViewModels\WszystkieViewModel.cs" />
+    <Compile Include="ViewModels\WszystkieWZViewModel.cs" />
+    <Compile Include="ViewModels\WZEditViewModel.cs" />
+    <Compile Include="ViewModels\WZViewModel.cs" />
+    <Compile Include="ViewModels\ZamowieniaViewModel.cs" />
+    <Compile Include="ViewModels\ZamowienieEditViewModel.cs" />
+    <Compile Include="ViewModels\ZamowienieViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="Views\CennikView.xaml.cs">
+      <DependentUpon>CennikView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FakturaSprzedazyView.xaml.cs">
+      <DependentUpon>FakturaSprzedazyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FakturySprzedazyView.xaml.cs">
+      <DependentUpon>FakturySprzedazyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FakturyZakupuView.xaml.cs">
+      <DependentUpon>FakturyZakupuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FirmaView.xaml.cs">
+      <DependentUpon>FirmaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FirmyView.xaml.cs">
+      <DependentUpon>FirmyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GrupaTowarowaView.xaml.cs">
+      <DependentUpon>GrupaTowarowaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GrupyTowaroweView.xaml.cs">
+      <DependentUpon>GrupyTowaroweView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JedenViewBase.cs" />
+    <Compile Include="Views\KartotekaView.xaml.cs">
+      <DependentUpon>KartotekaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KategoriaEditView.xaml.cs">
+      <DependentUpon>KategoriaEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KategoriaView.xaml.cs">
+      <DependentUpon>KategoriaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KategorieView.xaml.cs">
+      <DependentUpon>KategorieView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KontrahenciView.xaml.cs">
+      <DependentUpon>KontrahenciView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KontrahentView.xaml.cs">
+      <DependentUpon>KontrahentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LogowanieView.xaml.cs">
+      <DependentUpon>LogowanieView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MagazynView.xaml.cs">
+      <DependentUpon>MagazynView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NowaFakturaZakupuView.xaml.cs">
+      <DependentUpon>NowaFakturaZakupuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NowyTowarView.xaml.cs">
+      <DependentUpon>NowyTowarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ParagonView.xaml.cs">
+      <DependentUpon>ParagonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ParagonyView.xaml.cs">
+      <DependentUpon>ParagonyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PZView.xaml.cs">
+      <DependentUpon>PZView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RaportBrakowView.xaml.cs">
+      <DependentUpon>RaportBrakowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RaportSprzedazView.xaml.cs">
+      <DependentUpon>RaportSprzedazView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RaportZyskView.xaml.cs">
+      <DependentUpon>RaportZyskView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RezerwacjaView.xaml.cs">
+      <DependentUpon>RezerwacjaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RezerwacjeView.xaml.cs">
+      <DependentUpon>RezerwacjeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UzytkownicyView.xaml.cs">
+      <DependentUpon>UzytkownicyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UzytkownikView.xaml.cs">
+      <DependentUpon>UzytkownikView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WszystkiePZView.xaml.cs">
+      <DependentUpon>WszystkiePZView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WszystkieTowaryView.xaml.cs">
+      <DependentUpon>WszystkieTowaryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WszystkieViewBase.cs" />
+    <Compile Include="Views\WszystkieWZView.xaml.cs">
+      <DependentUpon>WszystkieWZView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WZView.xaml.cs">
+      <DependentUpon>WZView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Zamowienia.xaml.cs">
+      <DependentUpon>Zamowienia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ZamowieniaView.xaml.cs">
+      <DependentUpon>ZamowieniaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ZamowienieView.xaml.cs">
+      <DependentUpon>ZamowienieView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CennikView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FakturaSprzedazyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FakturySprzedazyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FakturyZakupuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FirmaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FirmyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GrupaTowarowaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GrupyTowaroweView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KartotekaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KategoriaEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KategoriaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KategorieView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KontrahenciView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KontrahentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LogowanieView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MagazynView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helper\BaseCommand.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\CommandViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\NowyTowarViewModel.cs" />
+    <Compile Include="ViewModels\WorkspaceViewModel.cs" />
+    <Compile Include="ViewModels\WszystkieTowaryViewModel.cs" />
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\MainWindowResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NowaFakturaZakupuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NowyTowarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ParagonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ParagonyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PZView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RaportBrakowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RaportSprzedazView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RaportZyskView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RezerwacjaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RezerwacjeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StylZakladek.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UzytkownicyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UzytkownikView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WszystkiePZView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WszystkieTowaryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WszystkieWZView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WZView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Zamowienia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ZamowieniaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ZamowienieView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\Entities\ModelMiniMarket.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelMiniMarket.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\Entities\ModelMiniMarket.edmx.diagram">
+      <DependentUpon>ModelMiniMarket.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ModelS\" />
+    <Folder Include="Views\Icons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\visit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\offf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\tiee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\percent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\price-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\delivery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\grouped-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\warehouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\invoicee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\icons8-outbox-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\paymentt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\icons8-add-list-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\boxx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\icons8-inbox-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\orderr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\icons8-profit-report-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\icons8-access-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\icons8-calendar-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\graphh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\icons8-billing-machine-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\backupp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\icons8-database-import-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\icons8-online-shopping-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\logoMiniMarket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\Entities\ModelMiniMarket.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelMiniMarket.Context.cs</LastGenOutput>
+      <DependentUpon>ModelMiniMarket.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\Entities\ModelMiniMarket.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMiniMarket.edmx</DependentUpon>
+      <LastGenOutput>ModelMiniMarket.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

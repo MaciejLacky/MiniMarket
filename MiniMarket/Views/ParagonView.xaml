@@ -1,0 +1,134 @@
+﻿<UserControl x:Class="MiniMarket.Views.ParagonView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MiniMarket.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="1200">
+    <UserControl.Resources>
+        <ResourceDictionary Source="StylZakladek.xaml"/>
+    </UserControl.Resources>
+    <Grid Style="{StaticResource GridStandard}">
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Style="{StaticResource ColumnDefinitionComboBox}"/>
+                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                <ColumnDefinition Style="{StaticResource ColumnDefinitionComboBox}"/>
+                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                <ColumnDefinition Style="{StaticResource ColumnDefinitionComboBox}"/>
+                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                <ColumnDefinition Style="{StaticResource ColumnDefinitionComboBox}"/>
+                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                <ColumnDefinition Style="{StaticResource ColumnDefinitionComboBox}"/>
+                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                <ColumnDefinition Style="{StaticResource ColumnDefinitionComboBox}"/>
+                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Maciej Łącki" Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSprzedaz}"/>
+            <Button Grid.Column="2" Grid.Row="0" Content="Otwarcie szuflady" Style="{StaticResource ButtonSprzedaz}"/>
+            <Button Grid.Column="4" Grid.Row="0" Content="Raport dobowy" Style="{StaticResource ButtonSprzedaz}"/>
+            <Button Grid.Column="6" Grid.Row="0" Content="Operator" Style="{StaticResource ButtonSprzedaz}"/>
+            <Button Grid.Column="8" Grid.Row="0" Content="Kasa" Style="{StaticResource ButtonSprzedaz}"/>
+            <Button Grid.Column="10" Grid.Row="0" Content="Wyjście" Style="{StaticResource ButtonSprzedaz}"/>
+            <TextBox Grid.Row="0" Grid.Column="12" Style="{StaticResource TextBoxNieedytowalny}" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Style="{StaticResource ColumnDefinitionSeparacyjny}"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="30"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+               
+                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                <RowDefinition Style="{StaticResource RowDefinitionStandardowy}"/>
+                <RowDefinition  Height="30"/>
+
+            </Grid.RowDefinitions>
+            <Label Content="Kod:" Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSprzedaz}"/>
+            <TextBox Grid.Row="0" Grid.Column="2" Style="{StaticResource TextBoxStandardowy}" MaxHeight="40"/>
+            <Button Grid.Column="4" Grid.Row="0" Content="OK" Style="{StaticResource ButtonSprzedaz}"/>
+            <DataGrid Grid.Row="1" Grid.RowSpan="7" Grid.ColumnSpan="5" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Lp."/>
+                    <DataGridTextColumn Header="Nazwa" Width="350"/>
+                    <DataGridTextColumn Header="Ilość" Width="50"/>
+                    <DataGridTextColumn Header="JM" Width="30"/>
+                    <DataGridTextColumn Header="Cena" Width="80"/>
+                    <DataGridTextColumn Header="Wartość" Width="80"/>
+                    
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label Grid.Row="9" Content="Suma:" Style="{StaticResource LabelStandardowy}"/>
+            <Label Grid.Row="10" Content="Rabat:" Style="{StaticResource LabelStandardowy}"/>
+            <TextBox Grid.Row="9" Grid.Column="2" Style="{StaticResource TextBoxNieedytowalny}"/>
+            <TextBox Grid.Row="10" Grid.Column="2" Style="{StaticResource TextBoxNieedytowalny}"/>
+            <Button Grid.Column="6" Grid.Row="0" Content="Ciało" Style="{StaticResource ButtonSprzedaz}"/>
+            <Button Grid.Column="7" Grid.Row="0" Content="Twarz" Style="{StaticResource ButtonSprzedaz}"/>
+            <Button Grid.Column="8" Grid.Row="0" Content="Higiena" Style="{StaticResource ButtonSprzedaz}"/>
+            <Button Grid.Column="9" Grid.Row="0" Content="Makijaż" Style="{StaticResource ButtonSprzedaz}"/>
+            <Button Grid.Column="6" Grid.Row="1" Content="Ciało" Style="{StaticResource ButtonSprzedaz}"/>
+            <Button Grid.Column="7" Grid.Row="1" Content="Twarz" Style="{StaticResource ButtonSprzedaz}"/>
+            <Button Grid.Column="8" Grid.Row="1" Content="Higiena" Style="{StaticResource ButtonSprzedaz}"/>
+            <Button Grid.Column="9" Grid.Row="1" Content="Makijaż" Style="{StaticResource ButtonSprzedaz}"/>
+            <Button Grid.Column="6" Grid.Row="2" Content="Ciało" Style="{StaticResource ButtonSprzedaz}"/>
+            <Button Grid.Column="7" Grid.Row="2" Content="Twarz" Style="{StaticResource ButtonSprzedaz}"/>
+            <Button Grid.Column="8" Grid.Row="2" Content="Higiena" Style="{StaticResource ButtonSprzedaz}"/>
+            <Button Grid.Column="9" Grid.Row="2" Content="Makijaż" Style="{StaticResource ButtonSprzedaz}"/>
+            <Button Grid.Column="6" Grid.Row="4" Content="7" Style="{StaticResource ButtonSprzedaz}" FontWeight="ExtraBold"/>
+            <Button Grid.Column="7" Grid.Row="4" Content="8" Style="{StaticResource ButtonSprzedaz}" FontWeight="ExtraBold"/>
+            <Button Grid.Column="8" Grid.Row="4" Content="9" Style="{StaticResource ButtonSprzedaz}" FontWeight="ExtraBold"/>
+            <Button Grid.Column="9" Grid.Row="4" Content="Clr" Style="{StaticResource ButtonSprzedaz}" FontWeight="ExtraBold"/>
+            <Button Grid.Column="6" Grid.Row="5" Content="4" Style="{StaticResource ButtonSprzedaz}" FontWeight="ExtraBold"/>
+            <Button Grid.Column="7" Grid.Row="5" Content="5" Style="{StaticResource ButtonSprzedaz}" FontWeight="ExtraBold"/>
+            <Button Grid.Column="8" Grid.Row="5" Content="6" Style="{StaticResource ButtonSprzedaz}" FontWeight="ExtraBold"/>
+            <Button Grid.Column="9" Grid.Row="5" Content="Cofnij" Style="{StaticResource ButtonSprzedaz}" FontWeight="ExtraBold"/>
+            <Button Grid.Column="6" Grid.Row="6" Content="1" Style="{StaticResource ButtonSprzedaz}" FontWeight="ExtraBold"/>
+            <Button Grid.Column="7" Grid.Row="6" Content="2" Style="{StaticResource ButtonSprzedaz}" FontWeight="ExtraBold"/>
+            <Button Grid.Column="8" Grid.Row="6" Content="3" Style="{StaticResource ButtonSprzedaz}" FontWeight="ExtraBold"/>
+            <Button Grid.Column="9" Grid.Row="6" Grid.RowSpan="2" Content="Enter" Style="{StaticResource ButtonSprzedaz}" FontWeight="ExtraBold"/>
+            <Button Grid.Column="6" Grid.Row="7" Content="0" Style="{StaticResource ButtonSprzedaz}" FontWeight="ExtraBold"/>
+            <Button Grid.Column="7" Grid.Row="7" Content="00" Style="{StaticResource ButtonSprzedaz}" FontWeight="ExtraBold"/>
+            <Button Grid.Column="8" Grid.Row="7" Content="," Style="{StaticResource ButtonSprzedaz}" FontWeight="ExtraBold"/>
+            <StackPanel Grid.Row="0" Grid.Column="11" Grid.RowSpan="8">
+                <Button Content="Zmień ilość" Height="90" Style="{StaticResource ButtonSprzedaz}"/>
+                <Button Content="Zmień cene" Height="90" Style="{StaticResource ButtonSprzedaz}"/>
+                <Button Content="Rabat" Height="90" Style="{StaticResource ButtonSprzedaz}"/>
+                <Button Content="Usuń" Height="90" Style="{StaticResource ButtonSprzedaz}"/>
+                <Button Content="Dodaj" Height="90" Style="{StaticResource ButtonSprzedaz}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="9" Grid.Column="6" Orientation="Horizontal" Grid.ColumnSpan="6" Grid.RowSpan="2">
+                <Button Content="Zapłać" Width="150" Style="{StaticResource ButtonSprzedaz}" />
+                <Button Content="Anuluj" Width="150" Style="{StaticResource ButtonSprzedaz}" />
+                <Button Content="Karta" Width="150" Style="{StaticResource ButtonSprzedaz}" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

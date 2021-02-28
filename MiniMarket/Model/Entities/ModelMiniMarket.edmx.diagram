@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9a93126ef17f410c8f5e6a00cf0af298" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="MiniMarketModel.Kontrahenci" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MiniMarketModel.Kategorie" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MiniMarketModel.Firmy" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="MiniMarketModel.GrupyTowarowe" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MiniMarketModel.Uzytkownicy" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="MiniMarketModel.FakturySprzedazy" Width="2" PointX="7.625" PointY="14.875" />
+        <EntityTypeShape EntityType="MiniMarketModel.FakturySprzedazyPozycje" Width="2" PointX="9.875" PointY="0.5" />
+        <EntityTypeShape EntityType="MiniMarketModel.FakturyZakupu" Width="2" PointX="7.625" PointY="26.375" />
+        <EntityTypeShape EntityType="MiniMarketModel.FakturyZakupuPozycje" Width="2" PointX="9.875" PointY="12.5" />
+        <EntityTypeShape EntityType="MiniMarketModel.Paragony" Width="2" PointX="7.625" PointY="20.5" />
+        <EntityTypeShape EntityType="MiniMarketModel.ParagonyPozycje" Width="2" PointX="9.875" PointY="6.5" />
+        <EntityTypeShape EntityType="MiniMarketModel.PZ" Width="2" PointX="10.625" PointY="24.5" />
+        <EntityTypeShape EntityType="MiniMarketModel.PzPozycje" Width="2" PointX="12.875" PointY="6.5" />
+        <EntityTypeShape EntityType="MiniMarketModel.Rezerwacje" Width="2" PointX="10.625" PointY="18.875" />
+        <EntityTypeShape EntityType="MiniMarketModel.RezerwacjePozycje" Width="2" PointX="12.875" PointY="0.5" />
+        <EntityTypeShape EntityType="MiniMarketModel.sysdiagrams" Width="2" PointX="3.375" PointY="16.5" />
+        <EntityTypeShape EntityType="MiniMarketModel.Towary" Width="2" PointX="7.625" PointY="4.625" />
+        <EntityTypeShape EntityType="MiniMarketModel.TowaryIlosci" Width="2" PointX="9.875" PointY="53.875" />
+        <EntityTypeShape EntityType="MiniMarketModel.WZ" Width="2" PointX="10.625" PointY="30.5" />
+        <EntityTypeShape EntityType="MiniMarketModel.WzPozycje" Width="2" PointX="12.875" PointY="12.5" />
+        <EntityTypeShape EntityType="MiniMarketModel.Zamowienia" Width="2" PointX="13.625" PointY="18.5" />
+        <EntityTypeShape EntityType="MiniMarketModel.ZamowieniaPozycje" Width="2" PointX="15.875" PointY="6.5" />
+        <AssociationConnector Association="MiniMarketModel.FK_FakturySprzedazy_Kontrahenci" />
+        <AssociationConnector Association="MiniMarketModel.FK_FakturySprzedazyPozycje_FakturySprzedazy" />
+        <AssociationConnector Association="MiniMarketModel.FK_FakturySprzedazyPozycje_Towary" />
+        <AssociationConnector Association="MiniMarketModel.FK_FakturyZakupu_Kontrahenci" />
+        <AssociationConnector Association="MiniMarketModel.FK_FakturyZakupuPozycje_FakturyZakupu" />
+        <AssociationConnector Association="MiniMarketModel.FK_FakturyZakupuPozycje_Towary" />
+        <AssociationConnector Association="MiniMarketModel.FK_Towary_GrupyTowarowe" />
+        <AssociationConnector Association="MiniMarketModel.FK_Towary_Kategorie" />
+        <AssociationConnector Association="MiniMarketModel.FK_Paragony_Kontrahenci" />
+        <AssociationConnector Association="MiniMarketModel.FK_PZ_Kontrahenci" />
+        <AssociationConnector Association="MiniMarketModel.FK_Rezerwacje_Kontrahenci" />
+        <AssociationConnector Association="MiniMarketModel.FK_WZ_Kontrahenci" />
+        <AssociationConnector Association="MiniMarketModel.FK_Zamowienia_Kontrahenci" />
+        <AssociationConnector Association="MiniMarketModel.FK_ParagonyPozycje_Paragony" />
+        <AssociationConnector Association="MiniMarketModel.FK_ParagonyPozycje_Towary" />
+        <AssociationConnector Association="MiniMarketModel.FK_PzPozycje_PZ" />
+        <AssociationConnector Association="MiniMarketModel.FK_PzPozycje_Towary" />
+        <AssociationConnector Association="MiniMarketModel.FK_RezerwacjePozycje_Rezerwacje" />
+        <AssociationConnector Association="MiniMarketModel.FK_RezerwacjePozycje_Towary" />
+        <AssociationConnector Association="MiniMarketModel.FK_TowaryIlosci_Towary" />
+        <AssociationConnector Association="MiniMarketModel.FK_WzPozycje_Towary" />
+        <AssociationConnector Association="MiniMarketModel.FK_ZamowieniaPozycje_Towary" />
+        <AssociationConnector Association="MiniMarketModel.FK_WzPozycje_WZ" />
+        <AssociationConnector Association="MiniMarketModel.FK_ZamowieniaPozycje_Zamowienia" />
+        <EntityTypeShape EntityType="MiniMarketModel.CenaDomyslna" Width="1.5" PointX="5.375" PointY="19.75" />
+        <EntityTypeShape EntityType="MiniMarketModel.JednostkaPodstawowa" Width="1.5" PointX="5.375" PointY="12.5" />
+        <EntityTypeShape EntityType="MiniMarketModel.JednostkaPomocnicza" Width="1.5" PointX="5.375" PointY="25.5" />
+        <EntityTypeShape EntityType="MiniMarketModel.TypTowaru" Width="1.5" PointX="5.375" PointY="22.125" />
+        <EntityTypeShape EntityType="MiniMarketModel.VatSprzedaz" Width="1.5" PointX="5.375" PointY="27.875" />
+        <EntityTypeShape EntityType="MiniMarketModel.VatZakup" Width="1.5" PointX="3.375" PointY="9.875" />
+        <AssociationConnector Association="MiniMarketModel.FK_Towary_CenaDomyslna" />
+        <AssociationConnector Association="MiniMarketModel.FK_Towary_JednostkaPodstawowa" />
+        <AssociationConnector Association="MiniMarketModel.FK_Towary_JednostkaPomocnicza" />
+        <AssociationConnector Association="MiniMarketModel.FK_Towary_TypTowaru" />
+        <AssociationConnector Association="MiniMarketModel.FK_Towary_VatSprzedaz" />
+        <AssociationConnector Association="MiniMarketModel.FK_Towary_VatZakup" />
+        <EntityTypeShape EntityType="MiniMarketModel.DokumentNettoBrutto" Width="1.5" PointX="5.75" PointY="34.25" />
+        <EntityTypeShape EntityType="MiniMarketModel.Magazyny" Width="1.5" PointX="5.75" PointY="37.5" />
+        <EntityTypeShape EntityType="MiniMarketModel.RodzajeDokumentow" Width="1.5" PointX="5.75" PointY="30.875" />
+        <EntityTypeShape EntityType="MiniMarketModel.RodzajePlatnosci" Width="1.5" PointX="0.75" PointY="13" />
+        <AssociationConnector Association="MiniMarketModel.FK_FakturyZakupu_DokumentNettoBrutto" />
+        <AssociationConnector Association="MiniMarketModel.FK_FakturyZakupu_Magazyny" />
+        <AssociationConnector Association="MiniMarketModel.FK_FakturyZakupu_RodzajeDokumentow" />
+        <AssociationConnector Association="MiniMarketModel.FK_FakturyZakupu_RodzajePlatnosci" />
+        <AssociationConnector Association="MiniMarketModel.FK_FakturyZakupu_Kategorie" />
+        <AssociationConnector Association="MiniMarketModel.FK_FakturySprzedazy_DokumentNettoBrutto" />
+        <AssociationConnector Association="MiniMarketModel.FK_FakturySprzedazy_Kategorie" />
+        <AssociationConnector Association="MiniMarketModel.FK_FakturySprzedazy_Magazyny" />
+        <AssociationConnector Association="MiniMarketModel.FK_FakturySprzedazy_RodzajeDokumentow" />
+        <AssociationConnector Association="MiniMarketModel.FK_FakturySprzedazy_RodzajePlatnosci" />
+        <AssociationConnector Association="MiniMarketModel.FK_Kontrahenci_Kategorie" />
+        <AssociationConnector Association="MiniMarketModel.FK_Zamowienia_DokumentNettoBrutto" />
+        <AssociationConnector Association="MiniMarketModel.FK_Zamowienia_Kategorie" />
+        <AssociationConnector Association="MiniMarketModel.FK_Zamowienia_Magazyny" />
+        <AssociationConnector Association="MiniMarketModel.FK_Zamowienia_RodzajeDokumentow" />
+        <AssociationConnector Association="MiniMarketModel.FK_Zamowienia_RodzajePlatnosci" />
+        <AssociationConnector Association="MiniMarketModel.FK_Paragony_DokumentNettoBrutto" />
+        <AssociationConnector Association="MiniMarketModel.FK_PZ_DokumentNettoBrutto" />
+        <AssociationConnector Association="MiniMarketModel.FK_Rezerwacje_DokumentNettoBrutto" />
+        <AssociationConnector Association="MiniMarketModel.FK_WZ_DokumentNettoBrutto" />
+        <AssociationConnector Association="MiniMarketModel.FK_Paragony_Kategorie" />
+        <AssociationConnector Association="MiniMarketModel.FK_PZ_Kategorie" />
+        <AssociationConnector Association="MiniMarketModel.FK_Rezerwacje_Kategorie" />
+        <AssociationConnector Association="MiniMarketModel.FK_WZ_Kategorie" />
+        <AssociationConnector Association="MiniMarketModel.FK_Paragony_Magazyny" />
+        <AssociationConnector Association="MiniMarketModel.FK_PZ_Magazyny" />
+        <AssociationConnector Association="MiniMarketModel.FK_Rezerwacje_Magazyny" />
+        <AssociationConnector Association="MiniMarketModel.FK_WZ_Magazyny" />
+        <AssociationConnector Association="MiniMarketModel.FK_Paragony_RodzajeDokumentow" />
+        <AssociationConnector Association="MiniMarketModel.FK_Paragony_RodzajePlatnosci" />
+        <AssociationConnector Association="MiniMarketModel.FK_PZ_RodzajeDokumentow" />
+        <AssociationConnector Association="MiniMarketModel.FK_PZ_RodzajePlatnosci" />
+        <AssociationConnector Association="MiniMarketModel.FK_Rezerwacje_RodzajeDokumentow" />
+        <AssociationConnector Association="MiniMarketModel.FK_Rezerwacje_RodzajePlatnosci" />
+        <AssociationConnector Association="MiniMarketModel.FK_WZ_RodzajeDokumentow" />
+        <AssociationConnector Association="MiniMarketModel.FK_WZ_RodzajePlatnosci" />
+        <AssociationConnector Association="MiniMarketModel.FK_Zamowienia_RodzajePlatnosci1" />
+        <AssociationConnector Association="MiniMarketModel.FK_TowaryIlosci_FakturySprzedazy" />
+        <AssociationConnector Association="MiniMarketModel.FK_TowaryIlosci_FakturyZakupu" />
+        <AssociationConnector Association="MiniMarketModel.FK_TowaryIlosci_Paragony" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
